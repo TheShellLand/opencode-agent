@@ -1,0 +1,20 @@
+#!/bin/bash
+# run agent in docker
+
+image="opencode-agent"
+mount="."
+
+set -e
+
+docker network create agents >/dev/null 2>&1 || :
+
+set -x
+
+docker run --rm -it \
+  --network agents \
+  --shm-size=2g \
+  -v //var/run/docker.sock:/var/run/docker.sock \
+  -v $image-ssh:/root/.ssh \
+  -v $mount:/root/brain \
+  $image "$@" 
+

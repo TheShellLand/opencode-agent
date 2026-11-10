@@ -1,0 +1,380 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "ollama_gpu_1080ti_tailscale/gemma4:12b",
+  "notifications": {
+    "startupTips": false,
+    "onboarding": false
+  },
+  "permissions": [
+    {
+      "action": "read",
+      "resource": "*",
+      "effect": "allow"
+    },
+    {
+      "action": "write",
+      "resource": "*",
+      "effect": "allow"
+    },
+    {
+      "action": "tool.use",
+      "resource": "*",
+      "effect": "allow"
+    },
+    {
+      "action": "integration.use",
+      "resource": "mcp:internet-search",
+      "effect": "allow"
+    }
+  ],
+  "providers": {
+    "ollama_gpu_1080ti_tailscale": {
+      "name": "ollama_gpu_1080ti_tailscale",
+      "package": "@opencode/ai/providers/openai-compatible",
+      "env": [],
+      "settings": {
+        "baseURL": "http://100.120.42.82:11434/v1"
+      },
+      "models": {
+        "gemma4:12b": {
+          "name": "ollama_gpu_1080ti_tailscale/gemma4:12b",
+          "modalities": {
+            "input": [
+              "text",
+              "image",
+              "video",
+              "audio"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "limit": {
+            "context": 20480,
+            "output": 16374
+          },
+          "capabilities": {
+            "reasoning": {
+              "supported": true,
+              "effort": [
+                "off",
+                "minimal",
+                "low",
+                "medium",
+                "high"
+              ]
+            }
+          },
+          "settings": {
+            "reasoningEffort": "medium"
+          },
+          "variants": [
+            {
+              "id": "fast",
+              "settings": {
+                "reasoningEffort": "low"
+              }
+            },
+            {
+              "id": "deep",
+              "settings": {
+                "reasoningEffort": "high",
+                "reasoningSummary": "auto"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "ollama_gpu_5070fe_tailscale": {
+      "name": "ollama_gpu_5070fe_tailscale",
+      "package": "@opencode/ai/providers/openai-compatible",
+      "env": [],
+      "settings": {
+        "baseURL": "http://100.84.90.51:11434/v1"
+      },
+      "models": {
+        "gemma4:12b": {
+          "name": "ollama_gpu_5070fe_tailscale/gemma4:12b",
+          "modalities": {
+            "input": [
+              "text",
+              "image",
+              "video",
+              "audio"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "limit": {
+            "context": 20480,
+            "output": 16374
+          },
+          "capabilities": {
+            "reasoning": {
+              "supported": true,
+              "effort": [
+                "off",
+                "minimal",
+                "low",
+                "medium",
+                "high"
+              ]
+            }
+          },
+          "settings": {
+            "reasoningEffort": "medium"
+          },
+          "variants": [
+            {
+              "id": "fast",
+              "settings": {
+                "reasoningEffort": "low"
+              }
+            },
+            {
+              "id": "deep",
+              "settings": {
+                "reasoningEffort": "high",
+                "reasoningSummary": "auto"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "ollama_gpu_5070fe_local": {
+      "name": "ollama_gpu_5070fe_local",
+      "package": "@opencode/ai/providers/openai-compatible",
+      "env": [],
+      "settings": {
+        "baseURL": "http://192.168.111.175:11434/v1"
+      },
+      "models": {
+        "gemma4:12b": {
+          "name": "ollama_gpu_5070fe_local/gemma4:12b",
+          "modalities": {
+            "input": [
+              "text",
+              "image",
+              "video",
+              "audio"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "limit": {
+            "context": 20480,
+            "output": 16374
+          },
+          "capabilities": {
+            "reasoning": {
+              "supported": true,
+              "effort": [
+                "off",
+                "minimal",
+                "low",
+                "medium",
+                "high"
+              ]
+            }
+          },
+          "settings": {
+            "reasoningEffort": "medium"
+          },
+          "variants": [
+            {
+              "id": "fast",
+              "settings": {
+                "reasoningEffort": "low"
+              }
+            },
+            {
+              "id": "deep",
+              "settings": {
+                "reasoningEffort": "high",
+                "reasoningSummary": "auto"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "ollama_mac": {
+      "name": "ollama_mac",
+      "package": "@opencode/ai/providers/openai-compatible",
+      "env": [],
+      "settings": {
+        "baseURL": "http://host.docker.internal:11434/v1"
+      },
+      "models": {
+        "gemma4:12b": {
+          "name": "ollama_mac/gemma4:12b",
+          "modalities": {
+            "input": [
+              "text",
+              "image",
+              "video",
+              "audio"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "limit": {
+            "context": 20480,
+            "output": 16374
+          },
+          "capabilities": {
+            "reasoning": {
+              "supported": true,
+              "effort": [
+                "off",
+                "minimal",
+                "low",
+                "medium",
+                "high"
+              ]
+            }
+          },
+          "settings": {
+            "reasoningEffort": "medium"
+          },
+          "variants": [
+            {
+              "id": "fast",
+              "settings": {
+                "reasoningEffort": "low"
+              }
+            },
+            {
+              "id": "deep",
+              "settings": {
+                "reasoningEffort": "high",
+                "reasoningSummary": "auto"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "ollama_docker": {
+      "name": "ollama_docker",
+      "package": "@opencode/ai/providers/openai-compatible",
+      "env": [],
+      "settings": {
+        "baseURL": "http://ollama:11434/v1"
+      },
+      "models": {
+        "gemma4:12b": {
+          "name": "ollama_docker/gemma4:12b",
+          "modalities": {
+            "input": [
+              "text",
+              "image",
+              "video",
+              "audio"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "limit": {
+            "context": 20480,
+            "output": 16374
+          },
+          "capabilities": {
+            "reasoning": {
+              "supported": true,
+              "effort": [
+                "off",
+                "minimal",
+                "low",
+                "medium",
+                "high"
+              ]
+            }
+          },
+          "settings": {
+            "reasoningEffort": "medium"
+          },
+          "variants": [
+            {
+              "id": "fast",
+              "settings": {
+                "reasoningEffort": "low"
+              }
+            },
+            {
+              "id": "deep",
+              "settings": {
+                "reasoningEffort": "high",
+                "reasoningSummary": "auto"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "ollama_localhost": {
+      "name": "ollama_localhost",
+      "package": "@opencode/ai/providers/openai-compatible",
+      "env": [],
+      "settings": {
+        "baseURL": "http://localhost:11434/v1"
+      },
+      "models": {
+        "gemma4:12b": {
+          "name": "ollama_localhost/gemma4:12b",
+          "modalities": {
+            "input": [
+              "text",
+              "image",
+              "video",
+              "audio"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "limit": {
+            "context": 20480,
+            "output": 16374
+          },
+          "capabilities": {
+            "reasoning": {
+              "supported": true,
+              "effort": [
+                "off",
+                "minimal",
+                "low",
+                "medium",
+                "high"
+              ]
+            }
+          },
+          "settings": {
+            "reasoningEffort": "medium"
+          },
+          "variants": [
+            {
+              "id": "fast",
+              "settings": {
+                "reasoningEffort": "low"
+              }
+            },
+            {
+              "id": "deep",
+              "settings": {
+                "reasoningEffort": "high",
+                "reasoningSummary": "auto"
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}
