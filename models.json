@@ -27,6 +27,15 @@
       "effect": "allow"
     }
   ],
+  "settings": {
+    "telemetry": {
+      "telemetryLevel": "off"
+    },
+    "ui": {
+      "showStartupHints": false,
+      "showGettingStarted": false
+    }
+  },
   "providers": {
     "ollama_gpu_1080ti_tailscale": {
       "name": "ollama_gpu_1080ti_tailscale",

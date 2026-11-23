@@ -72,10 +72,10 @@ def build_models_config(providers, default):
 	models_config = dict()
 	models_config['$schema'] = 'https://opencode.ai/config.json'
 	models_config['model'] = default
-	models_config['notifications'] = dict(
-		startupTips=False,
-		onboarding=False
-	)
+	models_config['notifications'] = {
+		'startupTips': False,
+		'onboarding': False
+	}
 	models_config['permissions'] = [
 		{
 			"action": "read",
@@ -98,6 +98,17 @@ def build_models_config(providers, default):
 			"effect": "allow"
 		}
 	]
+
+	models_config['settings'] = {
+		'telemetry': {
+			"telemetryLevel": "off"
+		},
+		'ui': {
+			"showStartupHints": False,
+			"showGettingStarted": False 
+		}
+	}
+
 	models_config['providers'] = {x[0]: x[1] for x in providers} 
 	return models_config
 

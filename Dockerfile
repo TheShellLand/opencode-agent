@@ -1,6 +1,7 @@
 FROM node:latest
 
 ENV PATH=$PATH:/root/.opencode/bin/
+ENV OPENCODE_CONFIG="/root/.config/opencode/opencode.json"
 
 WORKDIR /
 
